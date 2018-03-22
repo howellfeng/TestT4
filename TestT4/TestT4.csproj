@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,11 +46,877 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cgform_button.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_button_sql.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_enhance_java.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_enhance_js.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_field.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_ftl.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_head.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_index.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_template.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cgform_uploadfiles.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityHelperForTS.cs">
+      <DependentUpon>EntityHelperForTS.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="EntityHelper.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityHelper.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_chemicla_check.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_chemicla_manage.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_dangerous_goods.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_dangerous_goodslist.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_fire_check.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_fire_equipment.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_apparatus.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_baseinfo.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_berth.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_certificate_apply.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_certificate_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_charge.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_fairway.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_harbour.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_invest.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_personnel.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_region.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_roadstead.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_store.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_wharf.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_operator_yard.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_safe_check.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_shoreline_apply.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="gk_shoreline_location.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_custom_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_custom_record.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_demo.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_multi_upload.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_order_custom.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_order_main.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_order_product.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jeecg_p3demo.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgdynamgraph_head.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgdynamgraph_item.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgdynamgraph_param.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgreport_head.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgreport_item.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_cgreport_param.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_contact.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_contact_group.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_cost_claim.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_entry.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_leave.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_meals_cost.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_other_cost.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_employee_resignation.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_graphreport_head.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_graphreport_item.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_leave.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_order_customer.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_order_main.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_order_ticket.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_price1.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_resume_degree_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_resume_exp_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_resume_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jform_tree.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_chat_message_his.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_demo_activity.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_demo_auth.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_demo_order_custom.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_demo_order_main.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_demo_order_product.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_inner_mail.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_inner_mail_attach.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="jp_inner_mail_receiver.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="log_http_client.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Manager.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="shipmodel.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="task_form.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Test.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestMySql.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test_person.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tmp_tables.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_attachment.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_base_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_black_list.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_category.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_data_log.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_data_rule.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_data_source.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_depart.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_document.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_function.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_function_group.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_function_group_rel.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_function_group_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_icon.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_log.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_muti_lang.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_notice.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_notice_authority_role.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_notice_authority_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_notice_read_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_operation.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_region.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_role.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_role_function.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_role_org.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_role_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_sms.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_sms_sql.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_sms_template.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_sms_template_sql.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_timetask.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_type.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_typegroup.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_user.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="t_s_user_org.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_enterprises_certificate.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_enterprises_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_enterprises_inverstor.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_enterprises_manager.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_enterprise_yearcheck.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_certificate.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_freight.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_inverstor.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_manager.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_scale.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_transportation.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_operator_yearcheck.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_ship_certificate.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_ship_info.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
+    <Compile Include="yz_ship_yearcheck.cs">
+      <DependentUpon>TestMySql.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EntityHelperForTS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityHelperForTS.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityHelper.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityHelper.cs</LastGenOutput>
+    </Content>
+    <Content Include="Manager.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Manager.cs</LastGenOutput>
+    </Content>
+    <Content Include="Test.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Test.cs</LastGenOutput>
+    </Content>
+    <Content Include="TestMySql.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TestMySql.cs</LastGenOutput>
+    </Content>
+    <Content Include="TS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="cgform_button.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_button_sql.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_enhance_java.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_enhance_js.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_field.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_ftl.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_head.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_index.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_template.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="cgform_uploadfiles.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_chemicla_check.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_chemicla_manage.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_dangerous_goods.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_dangerous_goodslist.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_fire_check.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_fire_equipment.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_apparatus.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_baseinfo.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_berth.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_certificate_apply.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_certificate_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_charge.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_fairway.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_harbour.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_invest.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_personnel.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_region.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_roadstead.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_store.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_wharf.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_operator_yard.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_safe_check.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_shoreline_apply.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="gk_shoreline_location.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="item.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_custom_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_custom_record.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_demo.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_multi_upload.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_order_custom.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_order_main.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_order_product.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jeecg_p3demo.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgdynamgraph_head.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgdynamgraph_item.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgdynamgraph_param.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgreport_head.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgreport_item.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_cgreport_param.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_contact.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_contact_group.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_cost_claim.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_entry.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_leave.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_meals_cost.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_other_cost.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_employee_resignation.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_graphreport_head.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_graphreport_item.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_leave.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_order_customer.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_order_main.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_order_ticket.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_price1.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_resume_degree_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_resume_exp_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_resume_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jform_tree.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_chat_message_his.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_demo_activity.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_demo_auth.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_demo_order_custom.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_demo_order_main.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_demo_order_product.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_inner_mail.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_inner_mail_attach.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="jp_inner_mail_receiver.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="log_http_client.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="shipmodel.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="task_form.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="test_person.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="tmp_tables.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_attachment.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_base_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_black_list.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_category.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_data_log.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_data_rule.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_data_source.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_depart.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_document.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_function.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_function_group.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_function_group_rel.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_function_group_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_icon.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_log.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_muti_lang.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_notice.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_notice_authority_role.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_notice_authority_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_notice_read_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_operation.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_region.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_role.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_role_function.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_role_org.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_role_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_sms.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_sms_sql.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_sms_template.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_sms_template_sql.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_timetask.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_type.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_typegroup.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_user.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="t_s_user_org.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_enterprises_certificate.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_enterprises_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_enterprises_inverstor.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_enterprises_manager.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_enterprise_yearcheck.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_certificate.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_freight.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_inverstor.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_manager.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_scale.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_transportation.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_operator_yearcheck.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_ship_certificate.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_ship_info.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="yz_ship_yearcheck.ts">
+      <DependentUpon>TS.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
