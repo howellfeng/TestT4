@@ -42,7 +42,7 @@ using System.Runtime.Serialization;
     }
 #>
 
-namespace Console4Test
+namespace ChongQingNetCheckWebService.Models
 {
     /// <summary>
     /// <#= entity.EntityName #> Entity Model
