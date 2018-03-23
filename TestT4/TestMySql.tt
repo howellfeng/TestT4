@@ -33,6 +33,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 <#    if(serviceModel)
     {
 #>
@@ -46,7 +47,7 @@ namespace Console4Test
     /// <summary>
     /// <#= entity.EntityName #> Entity Model
     /// </summary>    
-    [Serializable]
+    [Table("<#= entity.EntityName #>")]
 <#    if(serviceModel)
     {
 #>
