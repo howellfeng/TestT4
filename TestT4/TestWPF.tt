@@ -8,8 +8,8 @@
 <#
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
-    var table="yz_ship_info";
-    var propertyPrefix="Data.Info.";
+    var table="yz_ship_certificate";
+    var propertyPrefix="Data.Certificate.";
     var fields=EntityHelper.GetFields(connectionString,database,table);
     foreach(Field field in fields)
     {

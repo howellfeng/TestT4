@@ -1,0 +1,24 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ include file="EntityHelper.tt"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+<#
+    var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
+    var database="test1";
+    var table="yz_ship_yearcheck";
+    var propertyPrefix="";
+    var fields=EntityHelper.GetFields(connectionString,database,table);
+    foreach(Field field in fields)
+    {
+        if(!field.Comment.ToUpper().Contains("ID")){
+        #>
+<telerik:GridViewDataColumn Header="<#=                field.Comment #>" DataMemberBinding="{Binding <#=                propertyPrefix+field.Name #>,Mode=OneTime<#            if(field.Type=="DateTime?"){ #>,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'<#            }
+            else if(field.Comment.Contains("是否")){ #>,Converter={StaticResource bool2String}<#            } #>}"/>
+<#        }#>
+<#
+    }
+
+    #>
