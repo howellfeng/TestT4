@@ -9,11 +9,12 @@
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
     var table="yz_ship_info";
+    var propertyPrefix="Data.Info.";
     var fields=EntityHelper.GetFields(connectionString,database,table);
     foreach(Field field in fields)
     {
         #>
-<misControl:LabelItem Label="<#=            field.Comment #>：" Content="{Binding Data.Info.<#=            field.Name #>,Mode=OneWay<#        if(field.Type=="DateTime?"){ #>,'{}{0:yyyy-MM-dd HH:mm:ss}'<#        } #>}"/>
+<misControl:LabelItem Label="<#=            field.Comment #>：" Content="{Binding <#= propertyPrefix #><#=            field.Name #>,Mode=OneWay<#        if(field.Type=="DateTime?"){ #>,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'<#        } #>}"/>
 <#
     }
 

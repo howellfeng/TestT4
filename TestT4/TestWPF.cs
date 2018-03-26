@@ -2,10 +2,10 @@
 <misControl:LabelItem Label="主键：" Content="{Binding Data.Info.id,Mode=OneWay}"/>
 <misControl:LabelItem Label="创建人名称：" Content="{Binding Data.Info.create_name,Mode=OneWay}"/>
 <misControl:LabelItem Label="创建人登录名称：" Content="{Binding Data.Info.create_by,Mode=OneWay}"/>
-<misControl:LabelItem Label="创建日期：" Content="{Binding Data.Info.create_date,Mode=OneWay,'{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+<misControl:LabelItem Label="创建日期：" Content="{Binding Data.Info.create_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
 <misControl:LabelItem Label="更新人名称：" Content="{Binding Data.Info.update_name,Mode=OneWay}"/>
 <misControl:LabelItem Label="更新人登录名称：" Content="{Binding Data.Info.update_by,Mode=OneWay}"/>
-<misControl:LabelItem Label="更新日期：" Content="{Binding Data.Info.update_date,Mode=OneWay,'{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+<misControl:LabelItem Label="更新日期：" Content="{Binding Data.Info.update_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
 <misControl:LabelItem Label="所属部门：" Content="{Binding Data.Info.sys_org_code,Mode=OneWay}"/>
 <misControl:LabelItem Label="所属公司：" Content="{Binding Data.Info.sys_company_code,Mode=OneWay}"/>
 <misControl:LabelItem Label="流程状态：" Content="{Binding Data.Info.bpm_status,Mode=OneWay}"/>
@@ -36,8 +36,8 @@
 <misControl:LabelItem Label="船体材料：" Content="{Binding Data.Info.hull_material,Mode=OneWay}"/>
 <misControl:LabelItem Label="船舶总吨：" Content="{Binding Data.Info.total_ton,Mode=OneWay}"/>
 <misControl:LabelItem Label="净吨位：" Content="{Binding Data.Info.suttle_ton,Mode=OneWay}"/>
-<misControl:LabelItem Label="建成日期：" Content="{Binding Data.Info.build_date,Mode=OneWay,'{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-<misControl:LabelItem Label="改建日期：" Content="{Binding Data.Info.remould_date,Mode=OneWay,'{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+<misControl:LabelItem Label="建成日期：" Content="{Binding Data.Info.build_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+<misControl:LabelItem Label="改建日期：" Content="{Binding Data.Info.remould_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
 <misControl:LabelItem Label="主机台数：" Content="{Binding Data.Info.mainframe_total_num,Mode=OneWay}"/>
 <misControl:LabelItem Label="主机功率：" Content="{Binding Data.Info.mainframe_total_power,Mode=OneWay}"/>
 <misControl:LabelItem Label="参考载货量：" Content="{Binding Data.Info.reference_capacity,Mode=OneWay}"/>
@@ -58,4 +58,4 @@
 <misControl:LabelItem Label="最近年审年份：" Content="{Binding Data.Info.check_time,Mode=OneWay}"/>
 <misControl:LabelItem Label="船舶经营人：" Content="{Binding Data.Info.operator_name,Mode=OneWay}"/>
 <misControl:LabelItem Label="船舶管理人：" Content="{Binding Data.Info.manager_name,Mode=OneWay}"/>
-<misControl:LabelItem Label="船舶营运证到期时间：" Content="{Binding Data.Info.expire_time,Mode=OneWay,'{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+<misControl:LabelItem Label="船舶营运证到期时间：" Content="{Binding Data.Info.expire_time,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
