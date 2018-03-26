@@ -13,8 +13,15 @@
     var fields=EntityHelper.GetFields(connectionString,database,table);
     foreach(Field field in fields)
     {
+        if(!field.Comment.ToUpper().Contains("ID")){
         #>
-<misControl:LabelItem Label="<#=            field.Comment #>：" Content="{Binding <#= propertyPrefix #><#=            field.Name #>,Mode=OneWay<#        if(field.Type=="DateTime?"){ #>,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'<#        } #>}"/>
+<misControl:LabelItem Label="<#=                field.Comment #>："<#            if(field.Type=="DateTime?"){ #>>
+    <TextBlock Text="{Binding <#=                    propertyPrefix #><#=                    field.Name #>,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+</misControl:LabelItem>
+<#            }
+            else{ #> Content="{Binding <#=                    propertyPrefix #><#=                    field.Name #>,Mode=OneWay<#                if(field.Comment.Contains("是否")){ #>,Converter={StaticResource bool2String}<#                }#>}"/>
+<#            }#>
+<#        }#>
 <#
     }
 
