@@ -37,6 +37,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -316,6 +317,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestMySql.tt</DependentUpon>
     </Compile>
+    <Compile Include="TestWPF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestWPF.tt</DependentUpon>
+    </Compile>
     <Compile Include="test_person.cs">
       <DependentUpon>TestMySql.tt</DependentUpon>
     </Compile>
@@ -505,6 +511,10 @@
     <Content Include="TestMySql.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TestMySql.cs</LastGenOutput>
+    </Content>
+    <Content Include="TestWPF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TestWPF.cs</LastGenOutput>
     </Content>
     <Content Include="TS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

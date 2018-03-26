@@ -18,13 +18,13 @@
                 conn.Open();
                 var dbs = string.Join("','", databases.ToArray());
                 var cmd = string.Format(@"SELECT `information_schema`.`COLUMNS`.`TABLE_SCHEMA`
-                                                    ,`information_schema`.`COLUMNS`.`TABLE_NAME`
-                                                    ,`information_schema`.`COLUMNS`.`COLUMN_NAME`
-                                                    ,`information_schema`.`COLUMNS`.`DATA_TYPE`
-                                                    ,`information_schema`.`COLUMNS`.`COLUMN_COMMENT`
-                                                FROM `information_schema`.`COLUMNS`
-                                                WHERE `information_schema`.`COLUMNS`.`TABLE_SCHEMA` IN ('{0}') ", dbs);
-				MySqlCommand cmd2 = new MySqlCommand(cmd, conn);
+                    ,`information_schema`.`COLUMNS`.`TABLE_NAME`
+                    ,`information_schema`.`COLUMNS`.`COLUMN_NAME`
+                    ,`information_schema`.`COLUMNS`.`DATA_TYPE`
+                    ,`information_schema`.`COLUMNS`.`COLUMN_COMMENT`
+                    FROM `information_schema`.`COLUMNS`
+                    WHERE `information_schema`.`COLUMNS`.`TABLE_SCHEMA` IN ('{0}') ", dbs);
+                MySqlCommand cmd2 = new MySqlCommand(cmd, conn);
                 using (var reader = cmd2.ExecuteReader())
                 {
                     while (reader.Read())
@@ -39,22 +39,22 @@
                         {
                             entity = new Entity(table);
                             entity.Fields.Add(new Field
-                            {
-                                Name = column,
-                                Type = GetCLRType(type),
-                                Comment = comment
-                            });
+                                {
+                                    Name = column,
+                                    Type = GetCLRType(type),
+                                    Comment = comment
+                                    });
                             
                             list.Add(entity);
                         }
                         else
                         {
                             entity.Fields.Add(new Field
-                            {
-                                Name = column,
-                                Type = GetCLRType(type),
-                                Comment = comment
-                            });
+                                {
+                                    Name = column,
+                                    Type = GetCLRType(type),
+                                    Comment = comment
+                                    });
                         }
                     }
                 }
@@ -69,58 +69,58 @@
 
         //public static string GetCLRType(string dbType)
         //{
-            //switch(dbType)
-            //{
-                //case "tinyint":
-                //case "smallint":
-                //case "mediumint":
-                //case "int":
-                //case "integer":
-                    //return "int";
-                //case "double":
-                    //return "double";
-                //case "float":
-                    //return "float";
-                //case "decimal":
-                    //return "decimal";
-                //case "numeric":
-                //case "real":
-                    //return "decimal";
-                //case "bit":
-                    //return "bool";
-                //case "date":
-                //case "time":
-                //case "year":
-                //case "datetime":
-                //case "timestamp":
-                    //return "DateTime";
-                //case "tinyblob":
-                //case "blob":
-                //case "mediumblob":
-                //case "longblog":
-                //case "binary":
-                //case "varbinary":
-                    //return "byte[]";
-                //case "char":
-                //case "varchar":                    
-                //case "tinytext":
-                //case "text":
-                //case "mediumtext":
-                //case "longtext":
-                    //return "string";
-                //case "point":
-                //case "linestring":
-                //case "polygon":
-                //case "geometry":
-                //case "multipoint":
-                //case "multilinestring":
-                //case "multipolygon":
-                //case "geometrycollection":
-                //case "enum":
-                //case "set":
-                //default:
-                    //return dbType;
-            //}
+        //switch(dbType)
+        //{
+        //case "tinyint":
+        //case "smallint":
+        //case "mediumint":
+        //case "int":
+        //case "integer":
+        //return "int";
+        //case "double":
+        //return "double";
+        //case "float":
+        //return "float";
+        //case "decimal":
+        //return "decimal";
+        //case "numeric":
+        //case "real":
+        //return "decimal";
+        //case "bit":
+        //return "bool";
+        //case "date":
+        //case "time":
+        //case "year":
+        //case "datetime":
+        //case "timestamp":
+        //return "DateTime";
+        //case "tinyblob":
+        //case "blob":
+        //case "mediumblob":
+        //case "longblog":
+        //case "binary":
+        //case "varbinary":
+        //return "byte[]";
+        //case "char":
+        //case "varchar":                    
+        //case "tinytext":
+        //case "text":
+        //case "mediumtext":
+        //case "longtext":
+        //return "string";
+        //case "point":
+        //case "linestring":
+        //case "polygon":
+        //case "geometry":
+        //case "multipoint":
+        //case "multilinestring":
+        //case "multipolygon":
+        //case "geometrycollection":
+        //case "enum":
+        //case "set":
+        //default:
+        //return dbType;
+        //}
         //}
         public static string GetCLRType(string dbType)
         {
@@ -176,6 +176,31 @@
                 default:
                     return dbType;
             }
+        }
+        public static List<Field> GetFields(string connectionString, string database, string table)
+        {
+            var result = new List<Field>();
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter($"select * from information_schema.COLUMNS where table_name='{table}'", conn))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Field field = new Field() { Name = dr["COLUMN_NAME"].ToString(), Comment = dr["COLUMN_COMMENT"].ToString(),Type=GetCLRType(dr["DATA_TYPE"].ToString()) };
+                            result.Add(field);
+                        }
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Console.WriteLine(err);
+            }
+            return result;
         }
     }
 
