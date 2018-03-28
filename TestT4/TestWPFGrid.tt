@@ -4,21 +4,48 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".xaml" #>
 <#
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
     var table="yz_ship_yearcheck";
     var propertyPrefix="";
+    var control="YZShipYearChecks";
+    var dataContext="YZShipViewModel";
+    var itemSource="YearChecks";
     var fields=EntityHelper.GetFields(connectionString,database,table);
+    #>
+<UserControl x:Class="HydrometeorologyGISPluginLib.Control.<#=control #>"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HydrometeorologyGISPluginLib.Control"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:misControl="clr-namespace:VTMISBase.MainFrame.Controls;assembly=VTMISBase"
+             xmlns:localConverter="clr-namespace:HydrometeorologyGISPluginLib.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <localConverter:Boolean2StringConverter x:Key="bool2String"/>        
+    </UserControl.Resources>
+    <Grid  DataContext="{x:Static local:<#=dataContext #>.Instance}">
+        <telerik:RadGridView x:Name="grid" GroupRenderMode="Flat" RowIndicatorVisibility="Collapsed" IsReadOnly="True" ShowColumnSortIndexes="True" AutoGenerateColumns="False" CanUserFreezeColumns="False" CanUserResizeColumns="True" ShowGroupPanel="False" ItemsSource="{Binding Data.<#=itemSource #>,Mode=OneWay}">
+            <telerik:RadGridView.Columns>
+<#
     foreach(Field field in fields)
     {
         if(!field.Comment.ToUpper().Contains("ID")){
         #>
-<telerik:GridViewDataColumn Header="<#=                field.Comment #>" DataMemberBinding="{Binding <#=                propertyPrefix+field.Name #>,Mode=OneTime<#            if(field.Type=="DateTime?"){ #>,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'<#            }
+                <telerik:GridViewDataColumn Header="<#=                field.Comment #>" DataMemberBinding="{Binding <#=                propertyPrefix+field.Name #>,Mode=OneTime<#            if(field.Type=="DateTime?"){ #>,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'<#            }
             else if(field.Comment.Contains("是否")){ #>,Converter={StaticResource bool2String}<#            } #>}"/>
 <#        }#>
 <#
     }
 
     #>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <telerik:RadBusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" BusyContent="查询中..." DisplayAfter="0:0:0.5" Background="Transparent" BorderThickness="0" IsIndeterminate="True"/>
+    </Grid>
+</UserControl>

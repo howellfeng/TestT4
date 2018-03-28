@@ -10,9 +10,11 @@
     var database="test1";
     var table="yz_enterprises_certificate";
     var propertyPrefix="Data.Certificate.";
+    var control="YZEnterprisesCertificateCtrl";
+    var dataContext="YZEnterprisesViewModel";
     var fields=EntityHelper.GetFields(connectionString,database,table);
     #>
-<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZEnterprisesCertificateCtrl"
+<UserControl x:Class="HydrometeorologyGISPluginLib.Control.<#=control #>"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -29,7 +31,7 @@
             <Setter Property="Margin" Value="2"/>
         </Style>
     </UserControl.Resources>
-    <Grid  DataContext="{x:Static local:YZEnterprisesViewModel.Instance}">
+    <Grid  DataContext="{x:Static local:<#=dataContext #>.Instance}">
         <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical" Margin="5">
 <#
@@ -37,9 +39,9 @@
     {
         if(!field.Comment.ToUpper().Contains("ID")){
         #>
-<misControl:LabelItem Label="<#=                field.Comment #>："<#            if(field.Type=="DateTime?"){ #>>
-    <TextBlock Text="{Binding <#=                    propertyPrefix #><#=                    field.Name #>,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-</misControl:LabelItem>
+                <misControl:LabelItem Label="<#=                field.Comment #>："<#            if(field.Type=="DateTime?"){ #>>
+                    <TextBlock Text="{Binding <#=                    propertyPrefix #><#=                    field.Name #>,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                </misControl:LabelItem>
 <#            }
             else{ #> Content="{Binding <#=                    propertyPrefix #><#=                    field.Name #>,Mode=OneWay<#                if(field.Comment.Contains("是否")){ #>,Converter={StaticResource bool2String}<#                }#>}"/>
 <#            }#>
