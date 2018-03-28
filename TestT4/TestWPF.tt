@@ -4,13 +4,35 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".cs" #>
+<#@ output extension=".xaml" #>
 <#
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
-    var table="yz_ship_certificate";
+    var table="yz_enterprises_certificate";
     var propertyPrefix="Data.Certificate.";
     var fields=EntityHelper.GetFields(connectionString,database,table);
+    #>
+<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZEnterprisesCertificateCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HydrometeorologyGISPluginLib.Control"
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+             xmlns:misControl="clr-namespace:VTMISBase.MainFrame.Controls;assembly=VTMISBase"
+             xmlns:localConverter="clr-namespace:HydrometeorologyGISPluginLib.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <localConverter:Boolean2StringConverter x:Key="bool2String"/>
+        <Style TargetType="misControl:LabelItem">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid  DataContext="{x:Static local:YZEnterprisesViewModel.Instance}">
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical" Margin="5">
+<#
     foreach(Field field in fields)
     {
         if(!field.Comment.ToUpper().Contains("ID")){
@@ -26,3 +48,8 @@
     }
 
     #>
+            </StackPanel>
+        </ScrollViewer>
+        <telerik:RadBusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" BusyContent="查询中..." DisplayAfter="0:0:0.5" Background="Transparent" BorderThickness="0" IsIndeterminate="True"/>
+    </Grid>
+</UserControl>
