@@ -1,5 +1,5 @@
 ﻿
-<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZShipYearChecks"
+<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZEnterprisesYearChecksCtrl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,30 +13,55 @@
     <UserControl.Resources>
         <localConverter:Boolean2StringConverter x:Key="bool2String"/>        
     </UserControl.Resources>
-    <Grid  DataContext="{x:Static local:YZShipViewModel.Instance}">
+    <Grid  DataContext="{x:Static local:YZEnterprisesViewModel.Instance}">
         <telerik:RadGridView x:Name="grid" GroupRenderMode="Flat" RowIndicatorVisibility="Collapsed" IsReadOnly="True" ShowColumnSortIndexes="True" AutoGenerateColumns="False" CanUserFreezeColumns="False" CanUserResizeColumns="True" ShowGroupPanel="False" ItemsSource="{Binding Data.YearChecks,Mode=OneWay}">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="主键" DataMemberBinding="{Binding id,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="流程状态" DataMemberBinding="{Binding bpm_status,Mode=OneTime}"/>
                 <telerik:GridViewDataColumn Header="创建人名称" DataMemberBinding="{Binding create_name,Mode=OneTime}"/>
                 <telerik:GridViewDataColumn Header="创建人登录名称" DataMemberBinding="{Binding create_by,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="创建日期" DataMemberBinding="{Binding create_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
                 <telerik:GridViewDataColumn Header="更新人名称" DataMemberBinding="{Binding update_name,Mode=OneTime}"/>
                 <telerik:GridViewDataColumn Header="更新人登录名称" DataMemberBinding="{Binding update_by,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="更新日期" DataMemberBinding="{Binding update_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
                 <telerik:GridViewDataColumn Header="所属部门" DataMemberBinding="{Binding sys_org_code,Mode=OneTime}"/>
                 <telerik:GridViewDataColumn Header="所属公司" DataMemberBinding="{Binding sys_company_code,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="创建日期" DataMemberBinding="{Binding create_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-                <telerik:GridViewDataColumn Header="更新日期" DataMemberBinding="{Binding update_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-                <telerik:GridViewDataColumn Header="编号" DataMemberBinding="{Binding check_number,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="船名" DataMemberBinding="{Binding ship_name,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="营业运输证编号" DataMemberBinding="{Binding certificate_number,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="年审日期" DataMemberBinding="{Binding check_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-                <telerik:GridViewDataColumn Header="有效期至" DataMemberBinding="{Binding validity_to,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-                <telerik:GridViewDataColumn Header="年审结果" DataMemberBinding="{Binding check_result,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="审验机关" DataMemberBinding="{Binding check_organ,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="发证日期" DataMemberBinding="{Binding issure_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
-                <telerik:GridViewDataColumn Header="年审说明" DataMemberBinding="{Binding check_explain,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="流程状态" DataMemberBinding="{Binding bpm_status,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="企业中文名称" DataMemberBinding="{Binding chinese_name,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="法定代表人" DataMemberBinding="{Binding legal_person,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="经济类型" DataMemberBinding="{Binding economic_type,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="注册资本" DataMemberBinding="{Binding register_money,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="注册地址" DataMemberBinding="{Binding register_address,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="联系电话" DataMemberBinding="{Binding phone,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="经营地址" DataMemberBinding="{Binding operator_address,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="传真" DataMemberBinding="{Binding fax,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="许可证发证机关" DataMemberBinding="{Binding certificate_organ,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="许可证编号" DataMemberBinding="{Binding certificate_number,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="经营范围" DataMemberBinding="{Binding business_area,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="年审年份" DataMemberBinding="{Binding check_year,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="申请日期" DataMemberBinding="{Binding apply_date,Mode=OneTime,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                <telerik:GridViewDataColumn Header="期末总资产" DataMemberBinding="{Binding terminal_total,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="期末净资产" DataMemberBinding="{Binding terminal_clean,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="运输或营业收入" DataMemberBinding="{Binding tran_income,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="运输或营业成本" DataMemberBinding="{Binding tran_cost,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="船用柴油消耗量" DataMemberBinding="{Binding diesel_use,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="船用燃料油消耗量" DataMemberBinding="{Binding fuel_use,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="货运量" DataMemberBinding="{Binding freight_number,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="客运量" DataMemberBinding="{Binding passenger_number,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="货运周转量" DataMemberBinding="{Binding freight_turnover,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="客运周转量" DataMemberBinding="{Binding passenger_turnover,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="客运代理量" DataMemberBinding="{Binding passenger_proxy,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="船舶代理量" DataMemberBinding="{Binding ship_proxy,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="货物代理量" DataMemberBinding="{Binding goods_proxy,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="船舶管理量" DataMemberBinding="{Binding ship_manage,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="安全管理体系情况" DataMemberBinding="{Binding safe_system,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="符合证明DOC编号" DataMemberBinding="{Binding doc_number,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="上年度生产经营情况分析" DataMemberBinding="{Binding produce_analysis,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="上年度安全生产情况及措施" DataMemberBinding="{Binding measure_analysis,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="存在的困难和问题" DataMemberBinding="{Binding question_exist,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="建议和意见" DataMemberBinding="{Binding suggestion,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="备注" DataMemberBinding="{Binding remark,Mode=OneTime}"/>
                 <telerik:GridViewDataColumn Header="状态" DataMemberBinding="{Binding status,Mode=OneTime}"/>
-                <telerik:GridViewDataColumn Header="" DataMemberBinding="{Binding ship_id,Mode=OneTime}"/>
+                <telerik:GridViewDataColumn Header="" DataMemberBinding="{Binding enterprise_id,Mode=OneTime}"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <telerik:RadBusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" BusyContent="查询中..." DisplayAfter="0:0:0.5" Background="Transparent" BorderThickness="0" IsIndeterminate="True"/>

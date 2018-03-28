@@ -8,10 +8,10 @@
 <#
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
-    var table="yz_ship_yearcheck";
+    var table="yz_enterprise_yearcheck";
     var propertyPrefix="";
-    var control="YZShipYearChecks";
-    var dataContext="YZShipViewModel";
+    var control="YZEnterprisesYearChecksCtrl";
+    var dataContext="YZEnterprisesViewModel";
     var itemSource="YearChecks";
     var fields=EntityHelper.GetFields(connectionString,database,table);
     #>
