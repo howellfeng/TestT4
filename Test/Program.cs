@@ -10,8 +10,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            //test1();
-            test2();
+            test1();
+            //test2();
         }
 
         private static void test2()

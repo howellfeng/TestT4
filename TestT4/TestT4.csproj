@@ -322,16 +322,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TestMySqlObservableObject.tt</DependentUpon>
     </Compile>
-    <Compile Include="TestWPF.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestWPF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TestWPFGrid.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestWPFGrid.tt</DependentUpon>
-    </Compile>
     <Compile Include="test_person.cs">
       <DependentUpon>TestMySqlObservableObject.tt</DependentUpon>
     </Compile>
@@ -528,11 +518,11 @@
     </Content>
     <Content Include="TestWPF.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TestWPF.cs</LastGenOutput>
+      <LastGenOutput>TestWPF.xaml</LastGenOutput>
     </Content>
     <Content Include="TestWPFGrid.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TestWPFGrid.cs</LastGenOutput>
+      <LastGenOutput>TestWPFGrid.xaml</LastGenOutput>
     </Content>
     <Content Include="TS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -945,6 +935,22 @@
     <TypeScriptCompile Include="yz_ship_yearcheck.ts">
       <DependentUpon>TS.tt</DependentUpon>
     </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="TestWPF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestWPF.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestWPFGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TestWPFGrid.tt</DependentUpon>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

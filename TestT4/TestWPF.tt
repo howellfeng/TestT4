@@ -8,9 +8,9 @@
 <#
     var connectionString = @"Server=192.168.14.124;Port=3306;Database=test1;Uid=root;Pwd=root;Character Set=utf8;";
     var database="test1";
-    var table="yz_enterprises_info";
-    var propertyPrefix="Data.Info.";
-    var control="YZEnterprisesInfoCtrl";
+    var table="yz_enterprises_certificate";
+    var control="YZEnterprisesCertificateCtrl";
+    var propertyPrefix="Data.Certificate.";    
     var dataContext="YZEnterprisesViewModel";
     var fields=EntityHelper.GetFields(connectionString,database,table);
     #>

@@ -1,5 +1,5 @@
 ﻿
-<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZEnterprisesInfoCtrl"
+<UserControl x:Class="HydrometeorologyGISPluginLib.Control.YZEnterprisesCertificateCtrl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -19,42 +19,31 @@
     <Grid  DataContext="{x:Static local:YZEnterprisesViewModel.Instance}">
         <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Auto">
             <StackPanel Orientation="Vertical" Margin="5">
-                <misControl:LabelItem Label="主键：" Content="{Binding Data.Info.id,Mode=OneWay}"/>
-                <misControl:LabelItem Label="创建人名称：" Content="{Binding Data.Info.create_name,Mode=OneWay}"/>
-                <misControl:LabelItem Label="创建人登录名称：" Content="{Binding Data.Info.create_by,Mode=OneWay}"/>
+                <misControl:LabelItem Label="：" Content="{Binding Data.Certificate.id,Mode=OneWay}"/>
+                <misControl:LabelItem Label="创建人名称：" Content="{Binding Data.Certificate.create_name,Mode=OneWay}"/>
+                <misControl:LabelItem Label="创建人登录名称：" Content="{Binding Data.Certificate.create_by,Mode=OneWay}"/>
                 <misControl:LabelItem Label="创建日期：">
-                    <TextBlock Text="{Binding Data.Info.create_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                    <TextBlock Text="{Binding Data.Certificate.create_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
                 </misControl:LabelItem>
-                <misControl:LabelItem Label="更新人名称：" Content="{Binding Data.Info.update_name,Mode=OneWay}"/>
-                <misControl:LabelItem Label="更新人登录名称：" Content="{Binding Data.Info.update_by,Mode=OneWay}"/>
+                <misControl:LabelItem Label="更新人名称：" Content="{Binding Data.Certificate.update_name,Mode=OneWay}"/>
+                <misControl:LabelItem Label="更新人登录名称：" Content="{Binding Data.Certificate.update_by,Mode=OneWay}"/>
                 <misControl:LabelItem Label="更新日期：">
-                    <TextBlock Text="{Binding Data.Info.update_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                    <TextBlock Text="{Binding Data.Certificate.update_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
                 </misControl:LabelItem>
-                <misControl:LabelItem Label="所属部门：" Content="{Binding Data.Info.sys_org_code,Mode=OneWay}"/>
-                <misControl:LabelItem Label="所属公司：" Content="{Binding Data.Info.sys_company_code,Mode=OneWay}"/>
-                <misControl:LabelItem Label="流程状态：" Content="{Binding Data.Info.bpm_status,Mode=OneWay}"/>
-                <misControl:LabelItem Label="企业中文名：" Content="{Binding Data.Info.chinese_name,Mode=OneWay}"/>
-                <misControl:LabelItem Label="所在地航管部门：" Content="{Binding Data.Info.manager_dept,Mode=OneWay}"/>
-                <misControl:LabelItem Label="行政区划：" Content="{Binding Data.Info.district_code,Mode=OneWay}"/>
-                <misControl:LabelItem Label="注册地址：" Content="{Binding Data.Info.registered_address,Mode=OneWay}"/>
-                <misControl:LabelItem Label="法定代表人：" Content="{Binding Data.Info.legal_person,Mode=OneWay}"/>
-                <misControl:LabelItem Label="身份证号：" Content="{Binding Data.Info.card_no,Mode=OneWay}"/>
-                <misControl:LabelItem Label="经济类型：" Content="{Binding Data.Info.economic_type,Mode=OneWay}"/>
-                <misControl:LabelItem Label="企业法人营业执照号：" Content="{Binding Data.Info.business_certificate_no,Mode=OneWay}"/>
-                <misControl:LabelItem Label="资金币种：" Content="{Binding Data.Info.currency_kind,Mode=OneWay}"/>
-                <misControl:LabelItem Label="注册资本：" Content="{Binding Data.Info.registered_capital,Mode=OneWay}"/>
-                <misControl:LabelItem Label="联系电话：" Content="{Binding Data.Info.phone,Mode=OneWay}"/>
-                <misControl:LabelItem Label="传真：" Content="{Binding Data.Info.fax,Mode=OneWay}"/>
-                <misControl:LabelItem Label="经营范围：" Content="{Binding Data.Info.business_scope,Mode=OneWay}"/>
-                <misControl:LabelItem Label="备注：" Content="{Binding Data.Info.remark,Mode=OneWay}"/>
-                <misControl:LabelItem Label="申请原因：" Content="{Binding Data.Info.apply_reason,Mode=OneWay}"/>
-                <misControl:LabelItem Label="企业类型：" Content="{Binding Data.Info.enter_type,Mode=OneWay}"/>
-                <misControl:LabelItem Label="管理企业状态：" Content="{Binding Data.Info.status,Mode=OneWay}"/>
-                <misControl:LabelItem Label="最近年审年份：" Content="{Binding Data.Info.check_time,Mode=OneWay}"/>
-                <misControl:LabelItem Label="营运证到期时间：">
-                    <TextBlock Text="{Binding Data.Info.expire_time,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                <misControl:LabelItem Label="所属部门：" Content="{Binding Data.Certificate.sys_org_code,Mode=OneWay}"/>
+                <misControl:LabelItem Label="所属公司：" Content="{Binding Data.Certificate.sys_company_code,Mode=OneWay}"/>
+                <misControl:LabelItem Label="流程状态：" Content="{Binding Data.Certificate.bpm_status,Mode=OneWay}"/>
+                <misControl:LabelItem Label="编号：" Content="{Binding Data.Certificate.certificate_code,Mode=OneWay}"/>
+                <misControl:LabelItem Label="经营范围：" Content="{Binding Data.Certificate.area,Mode=OneWay}"/>
+                <misControl:LabelItem Label="经营期限：" Content="{Binding Data.Certificate.period,Mode=OneWay}"/>
+                <misControl:LabelItem Label="批准机关及文号：" Content="{Binding Data.Certificate.certificate_dept,Mode=OneWay}"/>
+                <misControl:LabelItem Label="发证日期：">
+                    <TextBlock Text="{Binding Data.Certificate.release_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
                 </misControl:LabelItem>
-                <misControl:LabelItem Label="管理企业营运证：" Content="{Binding Data.Info.certificate,Mode=OneWay}"/>
+                <misControl:LabelItem Label="有效期至：">
+                    <TextBlock Text="{Binding Data.Certificate.expiry_date,Mode=OneWay,StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}"/>
+                </misControl:LabelItem>
+                <misControl:LabelItem Label="证书状态：" Content="{Binding Data.Certificate.status,Mode=OneWay}"/>
             </StackPanel>
         </ScrollViewer>
         <telerik:RadBusyIndicator IsBusy="{Binding IsBusy,Mode=OneWay}" BusyContent="查询中..." DisplayAfter="0:0:0.5" Background="Transparent" BorderThickness="0" IsIndeterminate="True"/>
